@@ -26,6 +26,8 @@ class MenuScene: SKScene {
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        sceneTransition(touches, sceneName: "newGameButton", sceneClass:                 SceneManager.shared.transition(self, toScene: .GameScene, transition: SKTransition.fade(withDuration: 1)))
         let touch = touches.first
         
         if let location = touch?.location(in: self) {
@@ -33,7 +35,7 @@ class MenuScene: SKScene {
             
             if nodesArray.first?.name == "newGameButton" {
                 
-                SceneManager.shared.transition(self, toScene: .GameScene, transition: SKTransition.fade(withDuration: 1))
+
                 
             }
             
